@@ -1,0 +1,108 @@
+.c-voter {
+  .card {
+    max-width: 36rem;
+    margin: auto;
+    overflow: hidden;
+  }
+
+  .x-card-btn-favorite {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 4rem;
+
+    .btn {
+      vertical-align: middle;
+    }
+
+    .material-icons {
+      vertical-align: middle;
+    }
+  }
+
+  .x-card-image {
+    background-color: rgba(#000, 0.87);
+  }
+
+  .x-image-target {
+    @include aspect-ratio(16, 9);
+  }
+
+  .x-image-outlet {
+    @include position(absolute, 0);
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+  }
+
+  .x-image-loader {
+    @include position(absolute, 0);
+
+    display: flex;
+    align-content: center;
+    justify-content: center;
+  }
+
+  .x-loader,
+  .x-loader::after {
+    border-radius: 50%;
+    width: 10em;
+    height: 10em;
+  }
+
+  .x-loader {
+    margin: auto;
+    font-size: 10px;
+    position: relative;
+    text-indent: -9999em;
+    border-top: 1em solid rgba(#fff, 0.2);
+    border-right: 1em solid rgba(#fff, 0.2);
+    border-bottom: 1em solid rgba(#fff, 0.2);
+    border-left: 1em solid #fff;
+    transform: translateZ(0);
+    animation: x-loader 1s infinite linear;
+  }
+
+  @keyframes x-loader {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .x-card-btn-group-score {
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .x-btn-next {
+    height: 6rem;
+    width: 100%;
+
+    .btn {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .jk-rating-stars-container {
+    .button:not(.star-button):first-child {
+      display: none;
+    }
+
+    &.cursor-progress {
+      .star-button {
+        &:hover {
+          cursor: progress !important;
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <base href="/angularjs-redux/">
+    <title>DI/CC</title>
+  </head>
+  <body id="app">
+    <div class="shell">
+      <nav class="c-nav container">
+        <ul class="nav nav-tabs nav-justified pt-5 mb-5">
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              ng-class="{ 'active': ($location.path() === '/' || $location.path() === '/voter') }"
+              href="#!/voter"
+            >Vote</a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              ng-class="{ 'active': $location.path() === '/stash'}"
+              href="#!/stash"
+            >Results</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="viewport" data-ng-view>Loading...</div>
+    </div>
+  </body>
+</html>

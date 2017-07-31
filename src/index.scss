@@ -1,0 +1,30 @@
+@import './styles/styles';
+@import './modules/stash/styles';
+@import './modules/voter/styles';
+
+body {
+  background-color: #fff;
+}
+
+.inspect-panel {
+  @include position(fixed, 0 0 0 null);
+
+  background-color: #f2f2f2;
+  padding: 1rem;
+  width: 400px;
+  font-size: 12px;
+  overflow: scroll;
+  z-index: 9999999;
+}
+
+.cursor-default {
+  cursor: default;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.cursor-progress {
+  cursor: progress;
+}

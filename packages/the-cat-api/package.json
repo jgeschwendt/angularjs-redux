@@ -1,0 +1,11 @@
+{
+  "name": "the-cat-api",
+  "version": "2.9.3",
+  "main": "./index.js",
+  "peerDependencies": {
+    "rxjs": "^5.4.2"
+  },
+  "dependencies": {
+    "xml2js": "^0.4.17"
+  }
+}

@@ -1,0 +1,72 @@
+<main class="c-voter container">
+  <div class="card">
+    <div class="x-card-btn-favorite px-3">
+      <span
+        ng-if="($ctrl.props.image && $ctrl.props.image.id)"
+        ng-class="{ 'cursor-progress': $ctrl.props.imageFavoriteOptimistic }">
+        <span ng-if="!$ctrl.props.imageFavorite">
+          <button
+            class="btn btn-danger"
+            type="button"
+            ng-click="$ctrl.favoriteImage({
+            imageId: $ctrl.props.image.id,
+            action: 'add'
+          })"><i class="material-icons">favorite_border</i> Favorite</button>
+        </span>
+        <span ng-if="$ctrl.props.imageFavorite">
+          <button
+            class="btn btn-danger"
+            type="button"
+            ng-click="$ctrl.favoriteImage({
+            imageId: $ctrl.props.image.id,
+            action: 'remove'
+          })"><i class="material-icons">favorite</i> Favorited</button>
+        </span>
+      </span>
+    </div>
+
+    <div class="x-card-image">
+      <span class="cursor-progress" ng-if="$ctrl.props.imagePending">
+        <div class="x-image-target">
+          <div class="x-image-loader">
+            <div class="x-loader"></div>
+          </div>
+        </div>
+      </span>
+      <span ng-if="(!$ctrl.props.imagePending && $ctrl.props.image)">
+        <div class="x-image-target">
+          <div
+            class="x-image-outlet"
+            ng-style="{'background-image': 'url(' + $ctrl.props.image.url + ')'}"
+          ></div>
+        </div>
+      </span>
+    </div>
+
+    <div class="x-card-btn-group-score">
+      <span
+        ng-if="($ctrl.props.image && $ctrl.props.image.id)"
+        ng-class="{ 'cursor-progress': $ctrl.props.imageScoreOptimistic }"
+      >
+        <jk-rating-stars
+          ng-class="{ 'cursor-progress': $ctrl.props.imageScoreOptimistic }"
+          max-rating="10"
+          rating="$ctrl.props.imageScore"
+          on-rating="$ctrl.scoreImage({
+            imageId: $ctrl.props.image.id,
+            score: rating,
+          })"
+        ></jk-rating-stars>
+      </span>
+    </div>
+    <div class="x-btn-next">
+      <button class="btn btn-primary rounded-0" ng-click="$ctrl.getNewImage()">Next</button>
+    </div>
+  </div>
+
+
+  <!-- remove hidden if you want to see the props for this container -->
+  <pre class="inspect-panel" hidden>
+    {{ $ctrl.props | json }}
+  </pre>
+</main>

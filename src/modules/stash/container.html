@@ -1,0 +1,65 @@
+<main class="c-stash container">
+  <div class="nav nav-pills nav-justified mb-5 p-4">
+    <li class="nav-item">
+      <span
+        class="nav-link cursor-pointer"
+        ng-class="{ 'active': ($ctrl.props.visibilityFilter === $ctrl.VISIBILITY_FILTER_FAVORITES) }"
+        ng-click="$ctrl.setVisibilityFilter($ctrl.VISIBILITY_FILTER_FAVORITES)"
+      >Favorites</span>
+    </li>
+    <li class="nav-item">
+      <span
+        class="nav-link cursor-pointer"
+        ng-class="{ 'active': ($ctrl.props.visibilityFilter === $ctrl.VISIBILITY_FILTER_SCORED) }"
+        ng-click="$ctrl.setVisibilityFilter($ctrl.VISIBILITY_FILTER_SCORED)"
+      >Scored</span>
+    </li>
+  </div>
+  <div ng-if="!($ctrl.props.images.length > 0)">
+    <div ng-if="($ctrl.props.visibilityFilter === $ctrl.VISIBILITY_FILTER_ALL)">
+      <h2>Nothing to see here, go <a href="#!/voter">vote on some images</a></h2>
+    </div>
+    <div ng-if="($ctrl.props.visibilityFilter === $ctrl.VISIBILITY_FILTER_FAVORITES)">
+      <h2>Nothing to see here, go <a href="#!/voter">find some favorites</a></h2>
+    </div>
+    <div ng-if="($ctrl.props.visibilityFilter === $ctrl.VISIBILITY_FILTER_SCORED)">
+      <h2>Nothing to see here, go <a href="#!/voter">vote on some images</a></h2>
+    </div>
+  </div>
+  <div
+    class="card-columns"
+    ng-if="$ctrl.props.images.length > 0"
+  >
+    <div class="card" ng-repeat="image in $ctrl.props.images">
+      <div class="x-image-target">
+        <div
+          class="x-image-outlet"
+          ng-style="{'background-image': 'url(' + image.url + ')'}"
+        ></div>
+      </div>
+      <span class="x-favorite-icon cursor-default" ng-if="image.favorite">
+        <i class="material-icons">favorite</i>
+      </span>
+      <span class="x-favorite-icon cursor-default" ng-if="!image.favorite">
+        <i class="material-icons">favorite_outline</i>
+      </span>
+      <div class="card-block">
+        <div class="x-star-rating-target">
+          <div class="x-star-rating-outlet">
+            <jk-rating-stars
+              max-rating="10"
+              rating="image.score"
+              read-only="true"
+            ></jk-rating-stars>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- remove hidden if you want to see the props for this container -->
+  <pre class="inspect-panel" hidden>
+    {{ $ctrl.props | json }}
+  </pre>
+</main>
+

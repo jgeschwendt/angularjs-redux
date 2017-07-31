@@ -1,0 +1,57 @@
+.c-stash {
+  .card {
+    background-color: #fff;
+    border-color: rgba(#000, 0.87);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .x-image-target {
+    @include aspect-ratio(1, 1);
+
+    background-color: rgba(#000, 0.87);
+  }
+
+  .x-image-outlet {
+    @include position(absolute, 0);
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+  }
+
+  .x-favorite-icon {
+    @include position(absolute, 0.5rem 0.5rem null null);
+
+    .material-icons {
+      color: red;
+      font-size: 2em;
+    }
+  }
+
+  .x-star-rating-target {
+    @include aspect-ratio(4, 1);
+  }
+
+  .x-star-rating-outlet {
+    @include position(absolute, 0);
+
+    display: flex;
+    justify-content: center;
+  }
+
+  .jk-rating-stars-container {
+    align-self: center;
+    display: flex;
+
+    .button:not(.star-button):first-child {
+      display: none;
+    }
+
+    .star-button {
+      .material-icons {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}

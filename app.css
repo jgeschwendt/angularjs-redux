@@ -1,0 +1,217 @@
+.c-stash .card {
+  background-color: #fff;
+  border-color: rgba(0, 0, 0, 0.87);
+  position: relative;
+  overflow: hidden;
+}
+
+.c-stash .x-image-target {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.87);
+}
+
+.c-stash .x-image-target::before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+  width: 100%;
+}
+
+.c-stash .x-image-outlet {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.c-stash .x-favorite-icon {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+}
+
+.c-stash .x-favorite-icon .material-icons {
+  color: red;
+  font-size: 2em;
+}
+
+.c-stash .x-star-rating-target {
+  position: relative;
+}
+
+.c-stash .x-star-rating-target::before {
+  content: "";
+  display: block;
+  padding-top: 25%;
+  width: 100%;
+}
+
+.c-stash .x-star-rating-outlet {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.c-stash .jk-rating-stars-container {
+  align-self: center;
+  display: flex;
+}
+
+.c-stash .jk-rating-stars-container .button:not(.star-button):first-child {
+  display: none;
+}
+
+.c-stash .jk-rating-stars-container .star-button .material-icons {
+  font-size: 1.2rem;
+}
+
+.c-voter .card {
+  max-width: 36rem;
+  margin: auto;
+  overflow: hidden;
+}
+
+.c-voter .x-card-btn-favorite {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 4rem;
+}
+
+.c-voter .x-card-btn-favorite .btn {
+  vertical-align: middle;
+}
+
+.c-voter .x-card-btn-favorite .material-icons {
+  vertical-align: middle;
+}
+
+.c-voter .x-card-image {
+  background-color: rgba(0, 0, 0, 0.87);
+}
+
+.c-voter .x-image-target {
+  position: relative;
+}
+
+.c-voter .x-image-target::before {
+  content: "";
+  display: block;
+  padding-top: 56.25%;
+  width: 100%;
+}
+
+.c-voter .x-image-outlet {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.c-voter .x-image-loader {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.c-voter .x-loader,
+.c-voter .x-loader::after {
+  border-radius: 50%;
+  width: 10em;
+  height: 10em;
+}
+
+.c-voter .x-loader {
+  margin: auto;
+  font-size: 10px;
+  position: relative;
+  text-indent: -9999em;
+  border-top: 1em solid rgba(255, 255, 255, 0.2);
+  border-right: 1em solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1em solid rgba(255, 255, 255, 0.2);
+  border-left: 1em solid #fff;
+  transform: translateZ(0);
+  animation: x-loader 1s infinite linear;
+}
+
+@keyframes x-loader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.c-voter .x-card-btn-group-score {
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.c-voter .x-btn-next {
+  height: 6rem;
+  width: 100%;
+}
+
+.c-voter .x-btn-next .btn {
+  height: 100%;
+  width: 100%;
+}
+
+.c-voter .jk-rating-stars-container .button:not(.star-button):first-child {
+  display: none;
+}
+
+.c-voter .jk-rating-stars-container.cursor-progress .star-button:hover {
+  cursor: progress !important;
+}
+
+body {
+  background-color: #fff;
+}
+
+.inspect-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f2f2f2;
+  padding: 1rem;
+  width: 400px;
+  font-size: 12px;
+  overflow: scroll;
+  z-index: 9999999;
+}
+
+.cursor-default {
+  cursor: default;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.cursor-progress {
+  cursor: progress;
+}
+/*# sourceMappingURL=app.css.map*/

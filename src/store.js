@@ -1,19 +1,19 @@
 import { combineReducers } from 'redux-immutable';
 import { combineEpics } from 'redux-observable';
 
-import voter from './modules/voter/reducer';
-import stash from './modules/stash/reducer';
+import voter from './containers/voter/reducer';
+import stash from './containers/stash/reducer';
 
 import {
   fetchFavoriteImagesEpic,
   fetchScoredImagesEpic,
-} from './modules/stash/actions';
+} from './containers/stash/epics';
 
 import {
   favoriteImageEpic,
   getNewImageEpic,
   scoreImageEpic,
-} from './modules/voter/actions';
+} from './containers/voter/epics';
 
 export const rootEpic = combineEpics(
   favoriteImageEpic,

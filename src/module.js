@@ -21,10 +21,13 @@ const ngModule = angular
 
 if (process.env.NODE_ENV !== 'production') {
   ngModule.config(['$ngReduxProvider', $ngReduxProvider => (
-    $ngReduxProvider.createStoreWith(rootReducer, [createEpicMiddleware(rootEpic)], [
-      // eslint-disable-next-line no-underscore-dangle
-      window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-    ])
+    $ngReduxProvider.createStoreWith(
+      rootReducer,
+      [createEpicMiddleware(rootEpic)],
+      (process.env.NODE_ENV !== 'production')
+        // eslint-disable-next-line no-underscore-dangle
+        ? [window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()]
+        : [])
   )]);
 }
 

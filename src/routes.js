@@ -1,8 +1,8 @@
 import * as angular from 'angular';
 import ngRoute from 'angular-route';
 
-import stashModule, { ngStashModuleRouteConfig } from './modules/stash/module';
-import voterModule, { ngVoterModuleRouteConfig } from './modules/voter/module';
+import stashModule, { ngStashModuleRouteConfig } from './containers/stash/module';
+import voterModule, { ngVoterModuleRouteConfig } from './containers/voter/module';
 
 const ngModule = angular
   .module('app.routes', [

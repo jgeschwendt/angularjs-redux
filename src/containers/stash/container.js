@@ -20,7 +20,8 @@ export default class StashContainerController {
   static $inject = ['$ngRedux', '$scope'];
 
   constructor($ngRedux, $scope) {
-    const unsubscribe = $ngRedux.connect(
+    this.$ngRedux = $ngRedux;
+    const unsubscribe = this.$ngRedux.connect(
       createStructuredSelector({
         props: makeSelectStashProps(),
       }),
@@ -37,8 +38,8 @@ export default class StashContainerController {
 
   onInit() {
     this.setConstants();
-    this.fetchFavoriteImages();
-    this.fetchScoredImages();
+    this.$ngRedux.dispatch(fetchFavoriteImages());
+    this.$ngRedux.dispatch(fetchScoredImages());
   }
 
   setConstants() {

@@ -4,7 +4,7 @@ import StashContainerController from './container';
 import template from './container.html';
 
 const ngModule = angular
-  .module('app.modules.stash', ['jkAngularRatingStars'])
+  .module('app.modules.stash', ['ngRedux', 'jkAngularRatingStars'])
   .controller('StashContainerController', StashContainerController);
 
 const ngStashModuleRouteConfig = {

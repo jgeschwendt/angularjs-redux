@@ -19,14 +19,13 @@ const ngModule = angular
     $rootScope.$location = $location; // eslint-disable-line no-param-reassign
   }]);
 
-if (process.env.NODE_ENV !== 'production') {
-  ngModule.config(['$ngReduxProvider', $ngReduxProvider => (
-    $ngReduxProvider.createStoreWith(
-      rootReducer,
-      [createEpicMiddleware(rootEpic)]
-    )
-  )]);
-}
+ngModule.config(['$ngReduxProvider', $ngReduxProvider => (
+  $ngReduxProvider.createStoreWith(
+    rootReducer,
+    [createEpicMiddleware(rootEpic)]
+  )
+)]);
+
 
 export default ngModule.name;
 export { ngModule };
